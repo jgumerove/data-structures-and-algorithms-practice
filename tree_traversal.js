@@ -37,7 +37,7 @@ class Node {
               else {
                 current = current.left
               }
-            }//end of first if black
+            }//end of first if block
             
             else if(current.value < val){
               if(current.right === null){
