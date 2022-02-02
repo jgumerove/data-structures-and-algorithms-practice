@@ -25,6 +25,25 @@ class Graph {
       }
       delete this.adjacencyList[vertex]
     }
+    depthFirstRecursive(start){
+      let result = []
+      let visited = {}
+      let adjacencyList = this.adjacencyList
+      function helper(vertex){
+        if(!vertex){
+          return null
+        }
+        visited[vertex] = true
+        result.push(vertex)
+        for (const element of adjacencyList[vertex]){
+          if(!visited[element]){
+            helper(element)
+          }
+        }
+      }
+      helper(start)
+      return result
+    }
   }
   
   
