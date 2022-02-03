@@ -44,6 +44,26 @@ class Graph {
       helper(start)
       return result
     }
+    
+    dfsIterative(start){
+      let stack = [start]
+      let result = []
+      let visited = {}
+      visited[start] = true
+      while(stack.length){
+        let vertex = stack.pop()
+        result.push(vertex)
+        this.adjacencyList[vertex].forEach((element) => {
+          if(!visited[element]){
+            visited[element] = true
+            stack.push(element)
+          }
+        }
+        )
+      }
+      return result
+    }
+
     bfs(start){
       let q = [start]
       let result = []
