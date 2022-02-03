@@ -44,6 +44,25 @@ class Graph {
       helper(start)
       return result
     }
+    bfs(start){
+      let q = [start]
+      let result = []
+      let visited = {}
+      visited[start] = true
+      while(q.length){
+        let vertex = q.shift()
+        result.push(vertex)
+        this.adjacencyList[vertex].forEach((element) => {
+          if(!visited[element]){
+            visited[element] = true
+            q.push(element)
+            // this.adjacencyList[element].forEach((neighbor) => stack.push(neighbor))
+          }
+        }
+        )
+      }
+      return result
+    }
   }
   
   
