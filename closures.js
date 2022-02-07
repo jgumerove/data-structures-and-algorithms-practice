@@ -36,6 +36,27 @@
     }
   }
 
-  const ohno = makeNuclearButton()
-  console.log(ohno.totalPeaceTime(), ohno.totalPeaceTime())
-  console.log(ohno.passTime())
+//   const ohno = makeNuclearButton()
+//   console.log(ohno.totalPeaceTime(), ohno.totalPeaceTime())
+//   console.log(ohno.passTime())
+
+  let view
+
+  function initialize(){
+     let called = 0
+     return function() {
+         if (called > 0) {
+             return
+         }
+         else{
+             view = "something"
+             called++
+             console.log("view has been set")
+         }
+     }
+  }
+
+  const startOnce = initialize()
+  startOnce()
+  startOnce()
+  console.log(view)
