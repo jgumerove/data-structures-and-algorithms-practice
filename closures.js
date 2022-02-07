@@ -55,8 +55,11 @@
          }
      }
   }
-
+//note -- could still call initialize though
   const startOnce = initialize()
   startOnce()
   startOnce()
   console.log(view)
+
+  let josh = []
+  console.log(josh.__proto__)
